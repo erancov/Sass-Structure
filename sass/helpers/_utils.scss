@@ -1,0 +1,33 @@
+
+$names: (
+    light: $light,
+    light-orange: $light-orange,
+    dark-orange: $dark-orange,
+    purple: $purple,
+    light-blue: $light-blue,
+    dark-blue: $dark-blue,
+    dark-brown: $dark-brown,
+    light-grey: $light-grey,
+    pink: $pink
+);
+
+// generate a class for each color in $names
+@each $name, $color in $names {
+    .text-#{$name} {
+        color: $color;
+    }
+}
+
+// generate a class for each color in $names
+@each $name, $color in $names {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+}
+
+// generate a class for each color in $names
+@each $name, $color in $names {
+    .btn-#{$name} {
+        @include button-bg($color);
+    }
+}
